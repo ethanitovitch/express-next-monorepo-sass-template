@@ -20,7 +20,7 @@ if [ -z "$APP_NAME" ]; then
   exit 1
 fi
 
-DB_NAME=$(echo "$APP_NAME" | sed 's/\([A-Z]\)/_\L\1/g' | sed 's/^_//')_db
+DB_NAME=$(echo "$APP_NAME" | sed 's/\([A-Z]\)/_\1/g' | tr '[:upper:]' '[:lower:]')_db
 
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
